@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40919617}
   - component: {fileID: 40919616}
-  - component: {fileID: 40919615}
+  - component: {fileID: 40919619}
   - component: {fileID: 40919618}
   m_Layer: 0
   m_Name: AR Session Origin
@@ -142,20 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &40919615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40919614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407146191e1a5434eb94468157a7becb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 65284393}
-  posText: {fileID: 1828601337}
 --- !u!114 &40919616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,10 +180,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 40919614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd5f69bdd50132847b2d379616de65f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9925ea3585251a749956d42749609f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filePathText: {fileID: 1600812348}
+--- !u!114 &40919619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40919614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9a9b4f37664f6418b70aa3c6dd5df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 65284393}
+  posText: {fileID: 1828601337}
 --- !u!1 &65284393
 GameObject:
   m_ObjectHideFlags: 0
