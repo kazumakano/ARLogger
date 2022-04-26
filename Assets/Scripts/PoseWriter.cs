@@ -18,15 +18,15 @@ public class PoseWriter : MonoBehaviour
         Debug.Log($"write to {file}", this);
     }
 
-    public void Write(Vector3 pos, Quaternion rot)
-    {
-        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{pos.x},{pos.y},{pos.z},{rot.x},{rot.y},{rot.z},{rot.w}");
-    }
-
     void OnDestroy()
     {
         writer.Flush();
         writer.Close();
         Debug.Log("log file has been closed", this);
+    }
+
+    public void Write(Vector3 pos, Quaternion rot)
+    {
+        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{pos.x},{pos.y},{pos.z},{rot.x},{rot.y},{rot.z},{rot.w}");
     }
 }
