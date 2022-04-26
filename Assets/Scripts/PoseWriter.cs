@@ -4,7 +4,7 @@ using System.IO;
 using System;
 
 
-public class PositionWriter : MonoBehaviour
+public class PoseWriter : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI filePathText;
     
@@ -18,8 +18,8 @@ public class PositionWriter : MonoBehaviour
         Debug.Log($"write to {file}", this);
     }
 
-    public void Write(Vector3 pos)
+    public void Write(Vector3 pos, Quaternion rot)
     {
-        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{pos.x},{pos.y},{pos.z}");
+        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{pos.x},{pos.y},{pos.z},{rot.x},{rot.y},{rot.z},{rot.w}");
     }
 }
