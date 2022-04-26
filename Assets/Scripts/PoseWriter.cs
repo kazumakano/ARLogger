@@ -25,6 +25,7 @@ public class PoseWriter : MonoBehaviour
 
     void OnApplicationQuit()
     {
+        writer.Flush();
         writer.Close();
     }
 }
