@@ -22,4 +22,9 @@ public class PoseWriter : MonoBehaviour
     {
         writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{pos.x},{pos.y},{pos.z},{rot.x},{rot.y},{rot.z},{rot.w}");
     }
+
+    void OnApplicationQuit()
+    {
+        writer.Close();
+    }
 }
