@@ -6,8 +6,9 @@ using System;
 
 public class PoseWriter : MonoBehaviour
 {
+    [SerializeField] new GameObject camera;
     [SerializeField] TextMeshProUGUI filePathText;
-    
+
     private StreamWriter writer;
 
     void Start()
@@ -18,14 +19,19 @@ public class PoseWriter : MonoBehaviour
         Debug.Log($"write to {file}", this);
     }
 
+    private void Write(Vector3 pos, Quaternion rot)
+    {
+        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{pos.x},{pos.y},{pos.z},{rot.x},{rot.y},{rot.z},{rot.w}");
+    }
+
+    void Update()
+    {
+        Write(camera.transform.position, camera.transform.rotation);
+    }
+
     void OnDestroy()
     {
         writer.Close();
         Debug.Log("log file has been closed", this);
-    }
-
-    public void Write(Vector3 pos, Quaternion rot)
-    {
-        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{pos.x},{pos.y},{pos.z},{rot.x},{rot.y},{rot.z},{rot.w}");
     }
 }
