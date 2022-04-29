@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class ButtonListener : MonoBehaviour
+public class ButtonClickListener : MonoBehaviour
 {
     [SerializeField] string sceneName;
 

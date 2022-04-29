@@ -285,7 +285,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1369951734}
-        m_TargetAssemblyTypeName: ButtonListener, Assembly-CSharp
+        m_TargetAssemblyTypeName: ButtonClickListener, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -343,10 +343,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1369951729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41add66a788483b47b3638bb95f586ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f1e3ec7c20833c4eb80f12c93a86746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Logging Scene
+  sceneName: Log Scene
 --- !u!1 &1471484790
 GameObject:
   m_ObjectHideFlags: 0
