@@ -1,7 +1,4 @@
 using UnityEngine;
-using System;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 
