@@ -9,8 +9,7 @@ public class StartBtnClickListener : BtnClickListener
 
     void SetMetaInfo(Scene scene, LoadSceneMode mode)
     {
-        PoseWriter poseWriter = GameObject.FindWithTag("Log Session").GetComponent<PoseWriter>();
-        poseWriter.metaInfo = metaInfoInputField.text;
+        GameObject.FindWithTag("Log Session").GetComponent<PoseWriter>().metaInfo = metaInfoInputField.text;
         SceneManager.sceneLoaded -= SetMetaInfo;
     }
 

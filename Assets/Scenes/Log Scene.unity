@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9925ea3585251a749956d42749609f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 65284393}
+  camera: {fileID: 65284397}
   filePathText: {fileID: 1600812348}
 --- !u!114 &2023299508
 MonoBehaviour:
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9a9b4f37664f6418b70aa3c6dd5df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 65284393}
+  camera: {fileID: 65284397}
   posText: {fileID: 1828601337}
 --- !u!4 &2023299509
 Transform:

@@ -6,7 +6,7 @@ using System.IO;
 
 public class PoseWriter : MonoBehaviour
 {
-    [SerializeField] new GameObject camera;
+    [SerializeField] new Camera camera;
     [SerializeField] TextMeshProUGUI filePathText;
 
     [NonSerialized] public string metaInfo = "";
@@ -23,7 +23,7 @@ public class PoseWriter : MonoBehaviour
         }
 
         string file = Path.Combine(fileName + ".csv");
-        filePathText.text = file;
+        filePathText.SetText(file);
         writer = new StreamWriter(file);
         Debug.Log($"write to {file}", this);
     }
