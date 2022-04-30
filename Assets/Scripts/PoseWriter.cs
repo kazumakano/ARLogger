@@ -9,7 +9,7 @@ public class PoseWriter : MonoBehaviour
     [SerializeField] new GameObject camera;
     [SerializeField] TextMeshProUGUI filePathText;
 
-    private StreamWriter writer;
+    StreamWriter writer;
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class PoseWriter : MonoBehaviour
         Debug.Log("log file has been closed", this);
     }
 
-    private void Write(Vector3 pos, Quaternion rot)
+    void Write(Vector3 pos, Quaternion rot)
     {
         writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{pos.x},{pos.y},{pos.z},{rot.x},{rot.y},{rot.z},{rot.w}");
     }

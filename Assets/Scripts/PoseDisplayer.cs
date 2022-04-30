@@ -12,7 +12,7 @@ public class PoseDisplayer : MonoBehaviour
         Display(camera.transform.position, camera.transform.rotation);
     }
 
-    private void Display(Vector3 pos, Quaternion rot)
+    void Display(Vector3 pos, Quaternion rot)
     {
         posText.text = $"x: {pos.x}\n" + $"y: {pos.y}\n" + $"z: {pos.z}\n";
     }
