@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Scene.unity
     guid: 18ebe331d16e8994ba478f7485613478
   - enabled: 1
+    path: Assets/Scenes/Config Scene.unity
+    guid: 6a1440812dfddfe47a28b8dfd5a43840
+  - enabled: 1
     path: Assets/Scenes/Log Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:

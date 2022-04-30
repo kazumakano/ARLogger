@@ -432,7 +432,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 157674686}
-          m_TargetAssemblyTypeName: ButtonDownListener, Assembly-CSharp
+          m_TargetAssemblyTypeName: BtnDownListener, Assembly-CSharp
           m_MethodName: OnDown
           m_Mode: 1
           m_Arguments:
@@ -448,7 +448,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 157674686}
-          m_TargetAssemblyTypeName: ButtonDownListener, Assembly-CSharp
+          m_TargetAssemblyTypeName: BtnDownListener, Assembly-CSharp
           m_MethodName: OnUp
           m_Mode: 1
           m_Arguments:
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 157674679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f09ea1a9f041948be168fe962569e9, type: 3}
+  m_Script: {fileID: 11500000, guid: a1a94e48aa5639f41acf61cb45cc5fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 2
@@ -565,8 +565,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1828601336}
   - {fileID: 1600812347}
+  - {fileID: 1828601336}
   - {fileID: 157674680}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -878,7 +878,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 223974230}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1013,7 +1013,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 223974230}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1130,7 +1130,7 @@ GameObject:
   - component: {fileID: 2023299507}
   m_Layer: 0
   m_Name: Log Session
-  m_TagString: Untagged
+  m_TagString: Log Session
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

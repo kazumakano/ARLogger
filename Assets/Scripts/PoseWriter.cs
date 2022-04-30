@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
-using System.IO;
 using System;
+using System.IO;
 
 
 public class PoseWriter : MonoBehaviour
@@ -9,11 +9,20 @@ public class PoseWriter : MonoBehaviour
     [SerializeField] new GameObject camera;
     [SerializeField] TextMeshProUGUI filePathText;
 
+    [NonSerialized] public string metaInfo = "";
     StreamWriter writer;
 
     void Start()
     {
-        string file = Path.Combine(Application.persistentDataPath, DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".csv");
+        string fileName = Path.Combine(Application.persistentDataPath, DateTime.Now.ToString("yyyyMMdd-HHmmss"));
+
+        if (metaInfo != "") {
+            writer = new StreamWriter(fileName + ".meta");
+            writer.WriteLine(metaInfo);
+            writer.Close();
+        }
+
+        string file = Path.Combine(fileName + ".csv");
         filePathText.text = file;
         writer = new StreamWriter(file);
         Debug.Log($"write to {file}", this);
