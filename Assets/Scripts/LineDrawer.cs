@@ -17,11 +17,13 @@ public class LineDrawer : MonoBehaviour
         filePathText.SetText(file);
 
         List<Vector3> poses = new List<Vector3>();
-        StreamReader reader = new StreamReader(file);
-
-        while (!reader.EndOfStream) {
-            string[] row = reader.ReadLine().Split(',');
-            poses.Add(new Vector3(float.Parse(row[1]) / 10, float.Parse(row[2]) / 10, float.Parse(row[3]) / 10));
+        using (StreamReader reader = new StreamReader(file))
+        {
+            while (!reader.EndOfStream)
+            {
+                string[] row = reader.ReadLine().Split(',');
+                poses.Add(new Vector3(float.Parse(row[1]) / 10, float.Parse(row[2]) / 10, float.Parse(row[3]) / 10));
+            }
         }
 
         LineRenderer renderer = Instantiate<GameObject>(linePrefab).GetComponent<LineRenderer>();

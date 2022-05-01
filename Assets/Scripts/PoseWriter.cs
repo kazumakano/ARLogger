@@ -16,13 +16,15 @@ public class PoseWriter : MonoBehaviour
     {
         string fileName = Path.Combine(Application.persistentDataPath, DateTime.Now.ToString("yyyyMMdd-HHmmss"));
 
-        if (metaInfo != "") {
-            writer = new StreamWriter(fileName + ".meta");
-            writer.WriteLine(metaInfo);
-            writer.Close();
+        if (metaInfo != "")
+        {
+            using (writer = new StreamWriter(fileName + ".meta"))
+            {
+                writer.WriteLine(metaInfo);
+            }
         }
 
-        string file = Path.Combine(fileName + ".csv");
+        string file = fileName + ".csv";
         filePathText.SetText(file);
         writer = new StreamWriter(file);
         Debug.Log($"write to {file}", this);

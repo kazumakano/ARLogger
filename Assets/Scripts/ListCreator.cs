@@ -10,7 +10,8 @@ public class ListCreator : MonoBehaviour
 
     void Start()
     {
-        foreach (string f in Directory.GetFiles(Application.persistentDataPath, "*.csv")) {
+        foreach (string f in Directory.GetFiles(Application.persistentDataPath, "*.csv"))
+        {
             GameObject logFilePanel = Instantiate<GameObject>(logFilePanelPrefab, content.transform);
 
             logFilePanel.GetComponent<DrawBtnClickListener>().file = f;

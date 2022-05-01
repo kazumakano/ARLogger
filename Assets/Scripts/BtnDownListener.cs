@@ -12,10 +12,12 @@ public class BtnDownListener : MonoBehaviour
 
     void Update()
     {
-        if (isDown) {
+        if (isDown)
+        {
             time += Time.deltaTime;
         }
-        if (time > duration) {
+        if (time > duration)
+        {
             SceneManager.LoadScene(sceneName);
         }
     }
