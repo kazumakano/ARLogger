@@ -9,7 +9,7 @@ public class PoseWriter : MonoBehaviour
     [SerializeField] new Camera camera;
     [SerializeField] TextMeshProUGUI filePathText;
 
-    [NonSerialized] public string metaInfo = "";
+    [NonSerialized] public string metaInfo;
     StreamWriter writer;
 
     void Start()
