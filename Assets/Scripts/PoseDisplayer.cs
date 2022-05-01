@@ -9,11 +9,6 @@ public class PoseDisplayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        Display(camera.transform.position, camera.transform.rotation);
-    }
-
-    void Display(Vector3 pos, Quaternion rot)
-    {
-        posText.SetText($"x: {pos.x}\n" + $"y: {pos.y}\n" + $"z: {pos.z}\n");
+        posText.SetText($"x: {camera.transform.position.x}\n" + $"y: {camera.transform.position.y}\n" + $"z: {camera.transform.position.z}\n");
     }
 }

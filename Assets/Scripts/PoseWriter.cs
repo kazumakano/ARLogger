@@ -30,17 +30,12 @@ public class PoseWriter : MonoBehaviour
 
     void Update()
     {
-        Write(camera.transform.position, camera.transform.rotation);
+        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{camera.transform.position.x},{camera.transform.position.y},{camera.transform.position.z},{camera.transform.rotation.x},{camera.transform.rotation.y},{camera.transform.rotation.z},{camera.transform.rotation.w}");
     }
 
     void OnDestroy()
     {
         writer.Close();
         Debug.Log("log file has been closed", this);
-    }
-
-    void Write(Vector3 pos, Quaternion rot)
-    {
-        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{pos.x},{pos.y},{pos.z},{rot.x},{rot.y},{rot.z},{rot.w}");
     }
 }
