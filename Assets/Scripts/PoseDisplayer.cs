@@ -14,6 +14,6 @@ public class PoseDisplayer : MonoBehaviour
 
     void Display(Vector3 pos, Quaternion rot)
     {
-        posText.SetText($"x: {pos.x}\n" + $"y: {pos.x}\n" + $"z: {pos.z}\n");
+        posText.SetText($"x: {pos.x}\n" + $"y: {pos.y}\n" + $"z: {pos.z}\n");
     }
 }
