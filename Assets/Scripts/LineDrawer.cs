@@ -23,7 +23,7 @@ public class LineDrawer : MonoBehaviour
             while (!reader.EndOfStream)
             {
                 string[] row = reader.ReadLine().Split(',');
-                poses.Add(scale * new Vector3(float.Parse(row[1]), float.Parse(row[2]), float.Parse(row[3])));
+                poses.Add(scale * new Vector3(float.Parse(row[1]), float.Parse(row[2]), float.Parse(row[3]) + 0.5f));
             }
         }
 
