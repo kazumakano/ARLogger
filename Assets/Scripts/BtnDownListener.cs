@@ -4,21 +4,21 @@ using UnityEngine.SceneManagement;
 
 public class BtnDownListener : MonoBehaviour
 {
-    [SerializeField] float duration;
-    [SerializeField] string sceneName;
+    [SerializeField] protected float duration;
+    [SerializeField] protected string sceneName;
 
-    bool isDown = false;
-    float time = 0;
+    protected bool isDown = false;
+    protected float time = 0;
 
-    void Update()
+    protected virtual void Update()
     {
         if (isDown)
         {
             time += Time.deltaTime;
-        }
-        if (time > duration)
-        {
-            SceneManager.LoadScene(sceneName);
+            if (time > duration)
+            {
+                SceneManager.LoadScene(sceneName);
+            }
         }
     }
 

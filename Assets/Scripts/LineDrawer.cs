@@ -9,6 +9,7 @@ public class LineDrawer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI filePathText;
     [SerializeField] GameObject linePrefab;
+    [SerializeField] float scale;
 
     [NonSerialized] public string file;
 
@@ -22,7 +23,7 @@ public class LineDrawer : MonoBehaviour
             while (!reader.EndOfStream)
             {
                 string[] row = reader.ReadLine().Split(',');
-                poses.Add(new Vector3(float.Parse(row[1]) / 10, float.Parse(row[2]) / 10, float.Parse(row[3]) / 10));
+                poses.Add(scale * new Vector3(float.Parse(row[1]), float.Parse(row[2]), float.Parse(row[3])));
             }
         }
 

@@ -38,6 +38,5 @@ public class PoseWriter : MonoBehaviour
     void OnDestroy()
     {
         writer.Close();
-        Debug.Log("log file has been closed", this);
     }
 }

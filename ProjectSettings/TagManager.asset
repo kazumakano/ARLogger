@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Log Session
   - Draw Session
+  - Info Session
   layers:
   - Default
   - TransparentFX
