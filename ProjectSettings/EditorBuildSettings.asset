@@ -18,11 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/List Scene.unity
     guid: cda100318e8581f489785796d0f4eaab
   - enabled: 1
-    path: Assets/Scenes/View Scene.unity
-    guid: 6ed8b8e359636d142956ec92a99d4bf4
-  - enabled: 1
     path: Assets/Scenes/Info Scene.unity
     guid: 409a99a502991f741a7a64b54bb3d9ec
+  - enabled: 1
+    path: Assets/Scenes/View Scene.unity
+    guid: 67a59f97caa9d864a8fd618f08a1f237
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 445d34d545fe1844bb7ce16b890ce20b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a26fdfb35bb928d4ea2063971c974703, type: 2}
