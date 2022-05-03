@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Log Session
-  - Draw Session
   - Info Session
+  - View Session
   layers:
   - Default
   - TransparentFX

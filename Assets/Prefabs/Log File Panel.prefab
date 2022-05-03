@@ -410,7 +410,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4219118454973669305}
-        m_TargetAssemblyTypeName: DrawBtnClickListener, Assembly-CSharp
+        m_TargetAssemblyTypeName: ViewBtnClickListener, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -430,10 +430,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3650783673745415784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd657b5a8907ff4ba6154113ecf889f, type: 3}
+  m_Script: {fileID: 11500000, guid: f0ea262e0d8598243bd57d465454c49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Draw Scene
+  sceneName: View Scene
 --- !u!114 &3650783673745415786
 MonoBehaviour:
   m_ObjectHideFlags: 0

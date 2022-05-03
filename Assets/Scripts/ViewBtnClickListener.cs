@@ -3,13 +3,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 
 
-public class DrawBtnClickListener : BtnClickListener
+public class ViewBtnClickListener : BtnClickListener
 {
     [NonSerialized] public string file;
 
     void SetFile(Scene scene, LoadSceneMode mode)
     {
-        GameObject.FindWithTag("Draw Session").GetComponent<LineDrawer>().file = file;
+        GameObject.FindWithTag("View Session").GetComponent<LineDrawer>().file = file;
         SceneManager.sceneLoaded -= SetFile;
     }
 

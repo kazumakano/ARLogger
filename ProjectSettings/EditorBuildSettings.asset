@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/List Scene.unity
     guid: cda100318e8581f489785796d0f4eaab
   - enabled: 1
-    path: Assets/Scenes/Draw Scene.unity
+    path: Assets/Scenes/View Scene.unity
     guid: 6ed8b8e359636d142956ec92a99d4bf4
   - enabled: 1
     path: Assets/Scenes/Info Scene.unity
