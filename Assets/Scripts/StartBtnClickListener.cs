@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 using System.IO;
@@ -8,6 +9,7 @@ using System.IO;
 public class StartBtnClickListener : BtnClickListener
 {
     [SerializeField] TMP_InputField metaInfoInputField;
+    [SerializeField] Toggle recorderToggle;
 
     void SetFileName(Scene scene, LoadSceneMode mode)
     {
@@ -25,7 +27,7 @@ public class StartBtnClickListener : BtnClickListener
 
     void SetRecorder(Scene scene, LoadSceneMode mode)
     {
-        GameObject.FindWithTag("AR Session").GetComponent<Recorder>().enabled = true;
+        GameObject.FindWithTag("AR Session").GetComponent<Recorder>().enabled = recorderToggle.isOn;
         SceneManager.sceneLoaded -= SetRecorder;
     }
 
