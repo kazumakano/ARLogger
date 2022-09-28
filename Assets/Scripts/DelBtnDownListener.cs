@@ -8,18 +8,11 @@ public class DelBtnDownListener : BtnDownListener
 {
     [NonSerialized] public string file;
 
-    protected override void Update()
+    protected override void OnTimeout()
     {
-        if (isDown)
-        {
-            time += Time.deltaTime;
-            if (time > duration)
-            {
-                File.Delete(file);
-                Debug.Log($"{file} has been deleted", this);
-                File.Delete(Path.ChangeExtension(file, ".meta"));
-                SceneManager.LoadScene(sceneName);
-            }
-        }
+        File.Delete(file);
+        Debug.Log($"{file} has been deleted", this);
+        File.Delete(Path.ChangeExtension(file, ".meta"));
+        SceneManager.LoadScene(sceneName);
     }
 }
