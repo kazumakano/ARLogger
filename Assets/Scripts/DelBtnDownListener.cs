@@ -13,6 +13,7 @@ public class DelBtnDownListener : BtnDownListener
         File.Delete(file);
         Debug.Log($"{file} has been deleted", this);
         File.Delete(Path.ChangeExtension(file, ".meta"));
+        File.Delete(Path.ChangeExtension(file, ".mp4"));
         SceneManager.LoadScene(sceneName);
     }
 }
