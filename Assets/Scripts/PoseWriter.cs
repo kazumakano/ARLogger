@@ -9,13 +9,12 @@ public class PoseWriter : MonoBehaviour
     [SerializeField] new Camera camera;
     [SerializeField] TextMeshProUGUI filePathText;
 
+    [NonSerialized] public string fileName;
     [NonSerialized] public string metaInfo;
     StreamWriter writer;
 
     void Start()
     {
-        string fileName = Path.Combine(Application.persistentDataPath, DateTime.Now.ToString("yyyyMMdd-HHmmss"));
-
         if (metaInfo != "")
         {
             using (writer = new StreamWriter(fileName + ".meta"))
