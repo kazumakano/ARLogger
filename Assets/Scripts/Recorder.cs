@@ -1,13 +1,12 @@
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
 using System;
+using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARCore;
-using System.IO;
 
 
 public class Recorder : MonoBehaviour
 {
-    [NonSerialized] public bool enabled;
+    [NonSerialized] new public bool enabled;
     [NonSerialized] public string file;
     ARSession session;
 
