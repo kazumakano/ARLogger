@@ -6,8 +6,8 @@ using UnityEngine.XR.ARCore;
 
 public class Recorder : MonoBehaviour
 {
-    [NonSerialized] new public bool enabled;
     [NonSerialized] public string file;
+    bool isOn = true;
     ARSession session;
 
     void Awake()
@@ -17,7 +17,7 @@ public class Recorder : MonoBehaviour
 
     void OnGUI()
     {
-        if (enabled)
+        if (isOn)
         {
             if (session.subsystem is ARCoreSessionSubsystem subsys && subsys.session != null && !subsys.recordingStatus.Recording())
             {
@@ -37,7 +37,7 @@ public class Recorder : MonoBehaviour
         if (session.subsystem is ARCoreSessionSubsystem subsys && subsys.session != null && subsys.recordingStatus.Recording())
         {
             subsys.StopRecording();
-            enabled = false;
+            isOn = false;
         }
     }
 }

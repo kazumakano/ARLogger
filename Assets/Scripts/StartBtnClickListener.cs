@@ -12,6 +12,18 @@ public class StartBtnClickListener : BtnClickListener
     [SerializeField] Toggle publisherToggle;
     [SerializeField] Toggle recorderToggle;
 
+    void ActivatePublisher(Scene scene, LoadSceneMode mode)
+    {
+        GameObject.FindWithTag("Log Session").GetComponent<PosePublisher>().enabled = publisherToggle.isOn;
+        SceneManager.sceneLoaded -= ActivatePublisher;
+    }
+
+    void ActivateRecorder(Scene scene, LoadSceneMode mode)
+    {
+        GameObject.FindWithTag("AR Session").GetComponent<Recorder>().enabled = recorderToggle.isOn;
+        SceneManager.sceneLoaded -= ActivateRecorder;
+    }
+
     void SetFileName(Scene scene, LoadSceneMode mode)
     {
         string fileName = Path.Combine(Application.persistentDataPath, DateTime.Now.ToString("yyyyMMdd-HHmmss"));
@@ -26,30 +38,12 @@ public class StartBtnClickListener : BtnClickListener
         SceneManager.sceneLoaded -= SetMetaInfo;
     }
 
-    void SetPublisher(Scene scene, LoadSceneMode mode)
-    {
-        if (publisherToggle.isOn)
-        {
-            PosePublisher publisher = GameObject.FindWithTag("Log Session").GetComponent<PosePublisher>();
-            publisher.enabled = true;
-            publisher.hostname = "192.168.207.133";
-            publisher.port = 8765;
-            SceneManager.sceneLoaded -= SetPublisher;
-        }
-    }
-
-    void SetRecorder(Scene scene, LoadSceneMode mode)
-    {
-        GameObject.FindWithTag("AR Session").GetComponent<Recorder>().enabled = recorderToggle.isOn;
-        SceneManager.sceneLoaded -= SetRecorder;
-    }
-
     public override void OnClick()
     {
+        SceneManager.sceneLoaded += ActivatePublisher;
+        SceneManager.sceneLoaded += ActivateRecorder;
         SceneManager.sceneLoaded += SetFileName;
         SceneManager.sceneLoaded += SetMetaInfo;
-        SceneManager.sceneLoaded += SetPublisher;
-        SceneManager.sceneLoaded += SetRecorder;
         SceneManager.LoadScene(sceneName);
     }
 }
