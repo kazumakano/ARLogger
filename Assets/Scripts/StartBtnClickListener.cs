@@ -31,11 +31,24 @@ public class StartBtnClickListener : BtnClickListener
         SceneManager.sceneLoaded -= SetRecorder;
     }
 
+    void SetUdp(Scene scene, LoadSceneMode mode)
+    {
+        if (true)
+        {
+            PosePublisher posePublisher = GameObject.FindWithTag("Log Session").GetComponent<PosePublisher>();
+            posePublisher.enabled = true;
+            posePublisher.hostname = "192.168.207.133";
+            posePublisher.port = 8765;
+            SceneManager.sceneLoaded -= SetUdp;
+        }
+    }
+
     public override void OnClick()
     {
         SceneManager.sceneLoaded += SetFileName;
         SceneManager.sceneLoaded += SetMetaInfo;
         SceneManager.sceneLoaded += SetRecorder;
+        SceneManager.sceneLoaded += SetUdp;
         SceneManager.LoadScene(sceneName);
     }
 }
