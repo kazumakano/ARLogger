@@ -16,7 +16,7 @@ class Conf
     }
 }
 
-public class ConfigManager : MonoBehaviour
+public class ConfManager : MonoBehaviour
 {
     [SerializeField] TMP_InputField udpDestHostnameInputField;
     [SerializeField] TMP_InputField udpDestPortInputField;
