@@ -9,8 +9,8 @@ public class PosePublisher : MonoBehaviour
     [SerializeField] new Camera camera;
 
     UdpClient client;
-    string hostname = "192.168.207.133";
-    int port = 8765;
+    [NonSerialized] public string hostname;
+    [NonSerialized] public int port;
 
     void Start()
     {
