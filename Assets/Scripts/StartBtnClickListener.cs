@@ -14,21 +14,7 @@ public class StartBtnClickListener : BtnClickListener
 
     void ActivatePublisher(Scene scene, LoadSceneMode mode)
     {
-        if (publisherToggle.isOn)
-        {
-            string file = Path.Combine(Application.persistentDataPath, "config.json");
-            if (File.Exists(file))
-            {
-                Conf conf = JsonUtility.FromJson<Conf>(File.ReadAllText(file));
-                if (conf.UdpDestHostname != "" && conf.UdpDestPort >= 0)
-                {
-                    PosePublisher publisher = GameObject.FindWithTag("Log Session").GetComponent<PosePublisher>();
-                    publisher.enabled = true;
-                    publisher.hostname = conf.UdpDestHostname;
-                    publisher.port = conf.UdpDestPort;
-                }
-            }
-        }
+        GameObject.FindWithTag("Log Session").GetComponent<PosePublisher>().enabled = publisherToggle.isOn;
         SceneManager.sceneLoaded -= ActivatePublisher;
     }
 
