@@ -26,6 +26,9 @@ public class PosePublisher : MonoBehaviour
 
     void OnDestroy()
     {
-        client.Close();
+        if (client != null)
+        {
+            client.Close();
+        }
     }
 }
