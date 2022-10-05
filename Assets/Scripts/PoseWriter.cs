@@ -6,7 +6,7 @@ using System.IO;
 
 public class PoseWriter : MonoBehaviour
 {
-    [SerializeField] new Camera camera;
+    [SerializeField] Camera cam;
     [SerializeField] TextMeshProUGUI filePathText;
 
     [NonSerialized] public string fileName;
@@ -31,7 +31,7 @@ public class PoseWriter : MonoBehaviour
 
     void Update()
     {
-        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{camera.transform.position.x},{camera.transform.position.y},{camera.transform.position.z},{camera.transform.rotation.x},{camera.transform.rotation.y},{camera.transform.rotation.z},{camera.transform.rotation.w}");
+        writer.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{cam.transform.position.x},{cam.transform.position.y},{cam.transform.position.z},{cam.transform.rotation.x},{cam.transform.rotation.y},{cam.transform.rotation.z},{cam.transform.rotation.w}");
     }
 
     void OnDestroy()

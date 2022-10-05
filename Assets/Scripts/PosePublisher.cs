@@ -6,7 +6,7 @@ using System.Text;
 
 public class PosePublisher : MonoBehaviour
 {
-    [SerializeField] new Camera camera;
+    [SerializeField] Camera cam;
 
     UdpClient client;
     [NonSerialized] public string hostname;
@@ -20,7 +20,7 @@ public class PosePublisher : MonoBehaviour
 
     void Update()
     {
-        byte[] msg = Encoding.UTF8.GetBytes($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{camera.transform.position.x},{camera.transform.position.y},{camera.transform.position.z},{camera.transform.rotation.x},{camera.transform.rotation.y},{camera.transform.rotation.z},{camera.transform.rotation.w}");
+        byte[] msg = Encoding.UTF8.GetBytes($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")},{cam.transform.position.x},{cam.transform.position.y},{cam.transform.position.z},{cam.transform.rotation.x},{cam.transform.rotation.y},{cam.transform.rotation.z},{cam.transform.rotation.w}");
         client.Send(msg, msg.Length);
     }
 
