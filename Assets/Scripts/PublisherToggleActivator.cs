@@ -5,7 +5,7 @@ using System.IO;
 
 public class PublisherToggleActivator : MonoBehaviour
 {
-    [SerializeField] Toggle publisherToggle;
+    [SerializeField] Toggle toggle;
 
     void Start()
     {
@@ -22,6 +22,6 @@ public class PublisherToggleActivator : MonoBehaviour
                 subscriberIsValid = true;
             }
         }
-        publisherToggle.interactable = subscriberIsValid;
+        toggle.interactable = subscriberIsValid;
     }
 }
