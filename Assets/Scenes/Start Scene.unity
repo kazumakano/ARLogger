@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cf14b7ea652504f88b03a80c9bb411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  publisherToggle: {fileID: 1846464313}
+  toggle: {fileID: 1846464313}
 --- !u!4 &783876687
 Transform:
   m_ObjectHideFlags: 0
