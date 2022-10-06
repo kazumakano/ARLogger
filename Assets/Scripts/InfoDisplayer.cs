@@ -12,7 +12,21 @@ public class InfoDisplayer : MonoBehaviour
     void Start()
     {
         string infoTextStr = $"file: {file}\n";
-        infoTextStr += $"size: {new FileInfo(file).Length} bytes\n";
+
+        long fileSize = new FileInfo(file).Length;
+        switch (fileSize)
+        {
+            case long l when l < 1024:
+                infoTextStr += $"size: {fileSize} bytes\n";
+                break;
+            case long l when l < Math.Pow(1024, 2):
+                infoTextStr += $"size: {fileSize / 1024.0:F1} KB\n";
+                break;
+            default:
+                infoTextStr += $"size: {fileSize / Math.Pow(1024, 2):F1} MB\n";
+                break;
+        }
+
         if (File.Exists(Path.ChangeExtension(file, ".meta")))
         {
             using (StreamReader reader = new StreamReader(Path.ChangeExtension(file, ".meta")))

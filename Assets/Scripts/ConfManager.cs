@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using System.IO;
-using System;
 
 
 class Conf
@@ -48,7 +47,7 @@ public class ConfManager : MonoBehaviour
 
     public void OnEndEditUdpDestPort()
     {
-        if (!Int32.TryParse(udpDestPortInputField.text, out conf.UdpDestPort))
+        if (!int.TryParse(udpDestPortInputField.text, out conf.UdpDestPort))
         {
             conf.UdpDestPort = -1;
         }
