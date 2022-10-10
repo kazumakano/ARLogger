@@ -12,9 +12,18 @@ public class StartBtnClickListener : BtnClickListener
     [SerializeField] Toggle publisherToggle;
     [SerializeField] Toggle recorderToggle;
 
+    [NonSerialized] public string udpDestHostname;
+    [NonSerialized] public int udpDestPort;
+
     void ActivatePublisher(Scene scene, LoadSceneMode mode)
     {
-        GameObject.FindWithTag("Log Session").GetComponent<PosePublisher>().enabled = publisherToggle.isOn;
+        if (publisherToggle.isOn)
+        {
+            PosePublisher publisher = GameObject.FindWithTag("Log Session").GetComponent<PosePublisher>();
+            publisher.enabled = true;
+            publisher.hostname = udpDestHostname;
+            publisher.port = udpDestPort;
+        }
         SceneManager.sceneLoaded -= ActivatePublisher;
     }
 
