@@ -17,7 +17,7 @@ public class InfoDisplayer : MonoBehaviour
         switch (fileSize)
         {
             case long l when l < 1024:
-                infoTextStr += $"size: {fileSize} bytes\n";
+                infoTextStr += $"size: {fileSize} B\n";
                 break;
             case long l when l < Math.Pow(1024, 2):
                 infoTextStr += $"size: {fileSize / 1024.0:F1} KB\n";
