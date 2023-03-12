@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 
 
 public class PublisherToggleActivator : MonoBehaviour
@@ -9,18 +8,13 @@ public class PublisherToggleActivator : MonoBehaviour
 
     void Start()
     {
-        string file = Path.Combine(Application.persistentDataPath, "config.json");
         bool udpDestIsValid = false;
-        if (File.Exists(file))
+        if (!string.IsNullOrEmpty(PlayerPrefs.GetString("UDP Dest Hostname")) && PlayerPrefs.GetInt("UDP Dest Port", -1) >= 0)
         {
-            Conf conf = JsonUtility.FromJson<Conf>(File.ReadAllText(file));
-            if (conf.UdpDestHostname != "" && conf.UdpDestPort >= 0)
-            {
-                StartBtnClickListener startBtnClickListener = startBtn.GetComponent<StartBtnClickListener>();
-                startBtnClickListener.udpDestHostname = conf.UdpDestHostname;
-                startBtnClickListener.udpDestPort = conf.UdpDestPort;
-                udpDestIsValid = true;
-            }
+            StartBtnClickListener startBtnClickListener = startBtn.GetComponent<StartBtnClickListener>();
+            startBtnClickListener.udpDestHostname = PlayerPrefs.GetString("UDP Dest Hostname");
+            startBtnClickListener.udpDestPort = PlayerPrefs.GetInt("UDP Dest Port");
+            udpDestIsValid = true;
         }
         GetComponent<Toggle>().interactable = udpDestIsValid;
     }

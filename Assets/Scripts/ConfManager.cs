@@ -1,56 +1,31 @@
 using UnityEngine;
 using TMPro;
-using System.IO;
 
-
-class Conf
-{
-    public string UdpDestHostname;
-    public int UdpDestPort;
-
-    public Conf()
-    {
-        UdpDestHostname = "";
-        UdpDestPort = -1;
-    }
-}
 
 public class ConfManager : MonoBehaviour
 {
     [SerializeField] TMP_InputField udpDestHostnameInputField;
     [SerializeField] TMP_InputField udpDestPortInputField;
 
-    Conf conf;
-    string file;
-
     void Start()
     {
-        file = Path.Combine(Application.persistentDataPath, "config.json");
-
-        if (File.Exists(file))
-        {
-            conf = JsonUtility.FromJson<Conf>(File.ReadAllText(file));
-            udpDestHostnameInputField.text = conf.UdpDestHostname;
-            udpDestPortInputField.text = conf.UdpDestPort >= 0 ? conf.UdpDestPort.ToString() : "";
-        }
-        else
-        {
-            conf = new Conf();
-        }
+        udpDestHostnameInputField.text = PlayerPrefs.GetString("UDP Dest Hostname");
+        udpDestPortInputField.text = PlayerPrefs.GetInt("UDP Dest Port", -1) >= 0 ? PlayerPrefs.GetInt("UDP Dest Port").ToString() : null;
     }
 
     public void OnEndEditUdpDestHostname()
     {
-        conf.UdpDestHostname = udpDestHostnameInputField.text;
-        File.WriteAllText(file, JsonUtility.ToJson(conf));
+        PlayerPrefs.SetString("UDP Dest Hostname", udpDestHostnameInputField.text);
     }
 
     public void OnEndEditUdpDestPort()
     {
-        if (!int.TryParse(udpDestPortInputField.text, out conf.UdpDestPort))
+        int udpDestPort;
+
+        if (!int.TryParse(udpDestPortInputField.text, out udpDestPort))
         {
-            conf.UdpDestPort = -1;
+            udpDestPort = -1;
         }
-        File.WriteAllText(file, JsonUtility.ToJson(conf));
+        PlayerPrefs.SetInt("UDP Dest Port", udpDestPort);
     }
 }
