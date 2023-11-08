@@ -20,8 +20,8 @@ public class LineDrawer : MonoBehaviour
     {
         filePathText.SetText(file);
 
-        List<Vector3> posesList = new List<Vector3>();
-        using (StreamReader reader = new StreamReader(file))
+        List<Vector3> posesList = new();
+        using (StreamReader reader = new(file))
         {
             while (!reader.EndOfStream)
             {

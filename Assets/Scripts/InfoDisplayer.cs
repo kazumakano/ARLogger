@@ -29,7 +29,7 @@ public class InfoDisplayer : MonoBehaviour
 
         if (File.Exists(Path.ChangeExtension(file, ".meta")))
         {
-            using (StreamReader reader = new StreamReader(Path.ChangeExtension(file, ".meta")))
+            using (StreamReader reader = new(Path.ChangeExtension(file, ".meta")))
             {
                 infoTextStr += $"meta info: {reader.ReadLine()}\n";
             }

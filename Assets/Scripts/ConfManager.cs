@@ -20,9 +20,7 @@ public class ConfManager : MonoBehaviour
 
     public void OnEndEditUdpDestPort()
     {
-        int udpDestPort;
-
-        if (!int.TryParse(udpDestPortInputField.text, out udpDestPort))
+        if (!int.TryParse(udpDestPortInputField.text, out int udpDestPort))
         {
             udpDestPort = -1;
         }
