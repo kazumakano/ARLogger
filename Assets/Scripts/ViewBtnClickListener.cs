@@ -1,6 +1,7 @@
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.IO;
 
 
 public class ViewBtnClickListener : BtnClickListener
@@ -9,6 +10,8 @@ public class ViewBtnClickListener : BtnClickListener
 
     void SetFile(Scene scene, LoadSceneMode mode)
     {
+        GameObject.FindWithTag("Open Button").GetComponent<OpenBtnClickListener>().file = file;
+        GameObject.FindWithTag("Play Button").GetComponent<PlayBtnClickListener>().file = Path.ChangeExtension(file, ".mp4");
         GameObject.FindWithTag("View Session").GetComponent<LineDrawer>().file = file;
         SceneManager.sceneLoaded -= SetFile;
     }
