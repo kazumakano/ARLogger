@@ -8,6 +8,8 @@ TagManager:
   - Info Session
   - View Session
   - AR Session
+  - Open Button
+  - Play Button
   layers:
   - Default
   - TransparentFX
