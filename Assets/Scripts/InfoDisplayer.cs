@@ -3,6 +3,7 @@ using TMPro;
 using System;
 using System.IO;
 
+
 public class InfoDisplayer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI infoText;
