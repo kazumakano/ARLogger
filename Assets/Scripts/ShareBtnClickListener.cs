@@ -1,5 +1,7 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
+using System.IO;
 
 
 public class ShareBtnClickListener : MonoBehaviour
@@ -8,6 +10,16 @@ public class ShareBtnClickListener : MonoBehaviour
 
     public void OnClick()
     {
-        Intent.ShareFile(file, "text/csv");
+        List<string> files = new() { file };
+        if (File.Exists(Path.ChangeExtension(file, ".meta")))
+        {
+            files.Add(Path.ChangeExtension(file, ".meta"));
+        }
+        if (File.Exists(Path.ChangeExtension(file, ".mp4")))
+        {
+            files.Add(Path.ChangeExtension(file, ".mp4"));
+        }
+
+        Intent.ShareFile(files, "*/*");
     }
 }

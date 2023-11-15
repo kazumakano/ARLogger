@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 
 public static class Intent
@@ -21,14 +22,16 @@ public static class Intent
         curAct.Call("startActivity", intent);
     }
 
-    public static void ShareFile(string file, string type)
+    public static void ShareFile(List<string> files, string type)
     {
-        intent.Call<AndroidJavaObject>(
-            "putExtra",
-            intent.GetStatic<string>("EXTRA_STREAM"),
-            fileProvider.CallStatic<AndroidJavaObject>("getUriForFile", ctx, auth, new AndroidJavaObject("java.io.File", file))
-        );
-        intent.Call<AndroidJavaObject>("setAction", intent.GetStatic<string>("ACTION_SEND"));
+        AndroidJavaObject uris = new("java.util.ArrayList");
+        foreach (string f in files)
+        {
+            uris.Call<bool>("add", fileProvider.CallStatic<AndroidJavaObject>("getUriForFile", ctx, auth, new AndroidJavaObject("java.io.File", f)));
+        }
+
+        intent.Call<AndroidJavaObject>("putExtra", intent.GetStatic<string>("EXTRA_STREAM"), uris);
+        intent.Call<AndroidJavaObject>("setAction", intent.GetStatic<string>("ACTION_SEND_MULTIPLE"));
         intent.Call<AndroidJavaObject>("setType", type);
         curAct.Call("startActivity", intent);
     }
