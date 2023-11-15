@@ -17,7 +17,6 @@ public class ListCreator : MonoBehaviour
             logFilePanel.GetComponent<ViewBtnClickListener>().file = f;
             logFilePanel.transform.Find("Delete Button").GetComponent<DelBtnDownListener>().file = f;
             logFilePanel.transform.Find("Info Button").GetComponent<InfoBtnClickListener>().file = f;
-            logFilePanel.transform.Find("Open Button").GetComponent<OpenBtnClickListener>().file = f;
             logFilePanel.transform.Find("Share Button").GetComponent<ShareBtnClickListener>().file = f;
             logFilePanel.transform.Find("Text").GetComponent<TextMeshProUGUI>().SetText(Path.GetFileNameWithoutExtension(f));
         }
