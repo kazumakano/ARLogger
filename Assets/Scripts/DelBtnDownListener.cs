@@ -14,7 +14,6 @@ public class DelBtnDownListener : BtnDownListener
         Debug.Log($"{file} has been deleted", this);
         File.Delete(Path.ChangeExtension(file, ".meta"));
         File.Delete(Path.ChangeExtension(file, ".mp4"));
-        Vibration.Vibrate(100);
         SceneManager.LoadScene(sceneName);
     }
 }

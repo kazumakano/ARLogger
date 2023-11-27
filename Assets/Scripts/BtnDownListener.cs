@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class BtnDownListener : MonoBehaviour
 {
+    const long VIB_LEN = 100;
+
     [SerializeField] float duration;
     [SerializeField] protected string sceneName;
 
@@ -18,6 +20,7 @@ public class BtnDownListener : MonoBehaviour
             if (time > duration)
             {
                 OnTimeout();
+                Vibration.Vibrate(VIB_LEN);
             }
         }
     }
