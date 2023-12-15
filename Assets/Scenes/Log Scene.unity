@@ -1296,6 +1296,7 @@ GameObject:
   - component: {fileID: 2023299508}
   - component: {fileID: 2023299510}
   - component: {fileID: 2023299507}
+  - component: {fileID: 2023299511}
   m_Layer: 0
   m_Name: Log Session
   m_TagString: Log Session
@@ -1360,3 +1361,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 65284397}
+--- !u!114 &2023299511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023299506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0583245033663364888d6d0e84d67a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
