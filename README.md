@@ -1,12 +1,13 @@
 # AR Logger
-This is application for Android smartphones to log pose.
-This application is based on [ARCore](https://developers.google.com/ar) and made with [Unity](https://unity.com/ja) 2021.3.
+This Android application lets you measure your smartphone poses, browse and manage the log files, and review the trajectories and videos.
+It recognizes the positions and orientations using the camera and depth sensor on the device based on [ARCore](https://developers.google.com/ar).
 
 ## Usage
-### pull_logs.ps1
-You can pull log files and videos from your Android smartphone with this script.
-You can filter datetime of log files and specify directory to put them.
-Default directory is `LogFiles/`.
+### Data Export
+The application saves pose data and video footage to smartphone local storage.
+You can copy the files to your Windows PC with the following command.
+The default destination is `LogFiles/`.
+You can filter the date and time via arguments.
 ```sh
-.\pull_logs.ps1 -Date LOG_DATE [-Time LOG_TIME] [-Dir PATH_TO_DIR] [-Vid]
+.\pull_logs.ps1 -Date 20000101 -Time 000000 -Vid
 ```
