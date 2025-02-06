@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 using System;
 using System.IO;
 
@@ -7,7 +6,6 @@ using System.IO;
 public class PoseWriter : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    [SerializeField] TextMeshProUGUI filePathText;
 
     [NonSerialized] public string fileName;
     [NonSerialized] public string metaInfo;
@@ -27,7 +25,6 @@ public class PoseWriter : MonoBehaviour
         }
 
         string file = fileName + ".csv";
-        filePathText.SetText(file);
         writer = new StreamWriter(file);
         Debug.Log($"write to {file}", this);
     }

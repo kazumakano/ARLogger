@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,6 @@ using System.IO;
 
 public class LineDrawer : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI filePathText;
     [SerializeField] GameObject linePrefab;
     [SerializeField] Slider scaleSlider;
 
@@ -18,8 +16,6 @@ public class LineDrawer : MonoBehaviour
 
     void Start()
     {
-        filePathText.SetText(file);
-
         List<Vector3> posesList = new();
         using (StreamReader reader = new(file))
         {

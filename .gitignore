@@ -71,5 +71,10 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+# Build datetime file
+/Assets/Resources.meta
+/Assets/Resources/BuildDatetime.txt
+/Assets/Resources/BuildDatetime.txt.meta
+
 # Pose log files
 /LogFiles/
