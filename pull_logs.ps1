@@ -15,7 +15,7 @@ if (!(Get-Item $Dir).PSIsContainer) {
     exit
 }
 
-$strs = adb shell ls '/sdcard/Android/data/com.kazumakano.arlogger/files/' | Select-String -Pattern "$Date.*-.*$Time.*.csv"
+$strs = adb shell ls '/sdcard/Android/data/com.kazumakano.arlogger/files/' | Select-String -Pattern "$Date.*-.*$Time.*.(csv|meta)"
 
 foreach ($s in $strs) {
     adb pull "/sdcard/Android/data/com.kazumakano.arlogger/files/$($s.Line)" $Dir
